@@ -39,7 +39,7 @@ for line in input():
             if len(out) > 0:
                 if prefix_speaker:
                     voice = actors[speaker]
-                    print "%s: %s" % (speaker, out)
+                    print("%s: %s" % (speaker, out))
                     PollyApi.speak(polly, out, voice)
             out = ""
             speaker = text
@@ -55,4 +55,4 @@ for line in input():
 
 # just in case the input ends in the middle of dialogue
 if len(out) > 0:
-    print out
+    print(out)

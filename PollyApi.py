@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Author Julien Simon, https://github.com/juliensimon/aws/blob/master/rekognition/PollyApi.py
 
-import os, boto3
+import os, boto3, sys
 
 defaultRegion = 'eu-west-1'
 defaultUrl = 'https://polly.eu-west-1.amazonaws.com'
@@ -12,7 +12,7 @@ def connectToPolly(regionName=defaultRegion, endpointUrl=defaultUrl):
 
 def speak(polly, text, voice='Brian', format='mp3' ):
     resp = polly.synthesize_speech(OutputFormat=format, Text=text, VoiceId=voice)
-    soundfile = open('/tmp/sound.mp3', 'w')
+    soundfile = open('/tmp/sound.mp3', 'wb')
     soundBytes = resp['AudioStream'].read()
     soundfile.write(soundBytes)
     soundfile.close()
