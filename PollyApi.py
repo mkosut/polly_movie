@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Author Julien Simon, https://github.com/juliensimon/aws/blob/master/rekognition/PollyApi.py
 
-import os, boto3, sys
+import os, boto3
 
 defaultRegion = 'eu-west-1'
 defaultUrl = 'https://polly.eu-west-1.amazonaws.com'
